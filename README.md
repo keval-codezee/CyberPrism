@@ -28,6 +28,17 @@ Built with **Prism** and **.NET**, backed by a robust **ASP.NET Core** and **Pos
 
 ---
 
+## 🚀 Releases
+
+The first public release of **CyberPrism** is now available:
+
+- **v1.0.0 – Initial Public Release**  
+  https://github.com/ForrestLin87/CyberPrism/releases/tag/v1.0.0
+
+This release introduces the core modular architecture built with **Prism and .NET**, backed by an **ASP.NET Core + PostgreSQL** backend, and establishes a scalable foundation for industrial monitoring and analytics.
+
+---
+
 ## 🛠️ Technology Stack
 
 ### Client (Desktop)
