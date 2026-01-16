@@ -77,7 +77,7 @@ Follow these instructions to get a local copy of the project up and running.
     ```
     - *Note: The application includes a `DatabaseSeeder` that will automatically create the database and populate it with sample data on the first run.*
 
-3.  ### 3. Run the Server
+3.  **Run the Server**
 Simply run the server application.
 
 **Option A: Using Visual Studio**
