@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="CyberPrism.Modules.FactoryVisual.Views.FactoryVisualView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <Grid>
+        <!-- Background Image with Blur -->
+        <Image Source="/CyberPrism.Modules.FactoryVisual;component/Images/industries-life-sciences-devices-line-final.jpg"
+               Stretch="UniformToFill">
+            <Image.Effect>
+                <BlurEffect Radius="10"/>
+            </Image.Effect>
+        </Image>
+
+        <!-- Overlay Text -->
+        <Border Background="#4C000000" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+             <TextBlock Text="Smart Industrial Control System" 
+                       HorizontalAlignment="Center" 
+                       VerticalAlignment="Center" 
+                       FontSize="36" 
+                       FontWeight="Bold"
+                       Foreground="White">
+                 <TextBlock.Effect>
+                     <DropShadowEffect ShadowDepth="2" BlurRadius="5" Opacity="0.8"/>
+                 </TextBlock.Effect>
+             </TextBlock>
+        </Border>
+    </Grid>
+</UserControl>
+

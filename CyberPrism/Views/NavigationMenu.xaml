@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="CyberPrism.Views.NavigationMenu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/">
+    
+    <Border Background="{StaticResource CardBackground}" Margin="0,0,2,0">
+        <StackPanel Margin="20">
+			<Image Source="pack://application:,,,/CyberPrism;component/Images/logo.png" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" />
+
+			<RadioButton Command="{Binding NavigateCommand}" CommandParameter="DashboardView" Content="Dashboard" GroupName="NavGroup" IsChecked="True"
+                         Style="{StaticResource NavRadioButtonStyle}"
+                         Visibility="{Binding Settings.ShowDashboard, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+            <RadioButton Command="{Binding NavigateCommand}" CommandParameter="ProductionView" Content="Production" GroupName="NavGroup"
+                         Style="{StaticResource NavRadioButtonStyle}"
+                         Visibility="{Binding Settings.ShowProduction, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+            <RadioButton Command="{Binding NavigateCommand}" CommandParameter="AnalyticsView" Content="Analytics" GroupName="NavGroup"
+                         Style="{StaticResource NavRadioButtonStyle}"
+                         Visibility="{Binding Settings.ShowAnalytics, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+            <RadioButton Command="{Binding NavigateCommand}" CommandParameter="SettingsView" Content="Settings" GroupName="NavGroup"
+                         Style="{StaticResource NavRadioButtonStyle}"/>
+        </StackPanel>
+    </Border>
+</UserControl>
+

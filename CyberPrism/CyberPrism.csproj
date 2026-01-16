@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <None Remove="Images\logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CyberPrism.Core\CyberPrism.Core.csproj" />
+    <ProjectReference Include="..\Modules\CyberPrism.Modules.Dashboard\CyberPrism.Modules.Dashboard.csproj" />
+    <ProjectReference Include="..\Modules\CyberPrism.Modules.Production\CyberPrism.Modules.Production.csproj" />
+    <ProjectReference Include="..\Modules\CyberPrism.Modules.Analytics\CyberPrism.Modules.Analytics.csproj" />
+    <ProjectReference Include="..\Modules\CyberPrism.Modules.Settings\CyberPrism.Modules.Settings.csproj" />
+    <ProjectReference Include="..\Modules\CyberPrism.Modules.FactoryVisual\CyberPrism.Modules.FactoryVisual.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Prism.Core" Version="9.0.537" />
+    <PackageReference Include="Prism.DryIoc" Version="9.0.537" />
+    <PackageReference Include="Prism.Wpf" Version="9.0.537" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <RollForward>Major</RollForward>
+  </PropertyGroup>
+
+</Project>
+
+
+

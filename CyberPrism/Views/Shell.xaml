@@ -1,0 +1,49 @@
+﻿<Window x:Class="CyberPrism.Views.Shell"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:prism="http://prismlibrary.com/"
+        xmlns:core="clr-namespace:CyberPrism.Core;assembly=CyberPrism.Core"
+        xmlns:models="clr-namespace:CyberPrism.Core.Models;assembly=CyberPrism.Core"
+        xmlns:views="clr-namespace:CyberPrism.Views"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        WindowStyle="None"
+        ResizeMode="CanResize"
+        Title="Smart Industrial Control System" Height="800" Width="1200"
+        WindowStartupLocation="CenterScreen"
+        Background="{StaticResource WindowBackground}"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown"
+        MouseRightButtonDown="Window_MouseRightButtonDown"
+        MouseDoubleClick="Window_MouseDoubleClick">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+    </Window.Resources>
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="0" ResizeBorderThickness="5" />
+    </WindowChrome.WindowChrome>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        
+        <!-- Sidebar -->
+		<views:NavigationMenu Grid.Column="0" />
+
+		<!-- Right Content Area -->
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Factory Visual Region -->
+            <ContentControl Grid.Row="0" prism:RegionManager.RegionName="{x:Static models:RegionNames.FactoryVisualRegion}" />
+
+            <!-- Main Content Region -->
+            <Border Grid.Row="1" BorderBrush="{StaticResource LightBorderBrush}" BorderThickness="1" >
+                <ContentControl prism:RegionManager.RegionName="{x:Static models:RegionNames.ContentRegion}" />
+            </Border>
+        </Grid>
+    </Grid>
+</Window>
+

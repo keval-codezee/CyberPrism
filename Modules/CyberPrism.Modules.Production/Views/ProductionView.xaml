@@ -1,0 +1,82 @@
+﻿<UserControl x:Class="CyberPrism.Modules.Production.Views.ProductionView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:core="clr-namespace:CyberPrism.Core.Views;assembly=CyberPrism.Core"
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <Grid>
+        <Grid Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Production Schedule" FontSize="32" FontWeight="Bold" Foreground="White" Margin="0,0,0,20"/>
+
+            <Border Grid.Row="1" Style="{StaticResource CardStyle}" Padding="0">
+                <DataGrid ItemsSource="{Binding Jobs}" AutoGenerateColumns="False" Background="Transparent" RowBackground="#1b2b3a" AlternatingRowBackground="#253545" Foreground="White" BorderThickness="0" HeadersVisibility="Column" RowHeaderWidth="0" GridLinesVisibility="None" CanUserAddRows="False" IsReadOnly="True">
+                <DataGrid.Resources>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="Background" Value="#1b2b3a"/>
+                        <Setter Property="Foreground" Value="#8b9bb4"/>
+                        <Setter Property="Padding" Value="10"/>
+                        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                        <Setter Property="FontSize" Value="14"/>
+                        <Setter Property="FontWeight" Value="SemiBold"/>
+                    </Style>
+                     <Style TargetType="DataGridCell">
+                        <Setter Property="Padding" Value="10"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="DataGridCell">
+                                    <Border Padding="{TemplateBinding Padding}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                                        <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                             <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Background" Value="#00d8ff"/>
+                                <Setter Property="Foreground" Value="Black"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </DataGrid.Resources>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Job ID" Binding="{Binding JobId}" Width="100"/>
+                    <DataGridTextColumn Header="Product" Binding="{Binding Product}" Width="*"/>
+                    <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}" Width="100"/>
+                    <DataGridTextColumn Header="Completed" Binding="{Binding Completed}" Width="100"/>
+                    <DataGridTemplateColumn Header="Progress" Width="200">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <ProgressBar Value="{Binding Progress, Mode=OneWay}" Maximum="100" Height="10" Background="#334455" Foreground="#00d8ff" BorderThickness="0"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="100">
+                         <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="TextBlock">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Status}" Value="Running">
+                                        <Setter Property="Foreground" Value="#00ffaa"/>
+                                    </DataTrigger>
+                                     <DataTrigger Binding="{Binding Status}" Value="Delayed">
+                                        <Setter Property="Foreground" Value="#ff5555"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Due Date" Binding="{Binding DueDate, StringFormat=d}" Width="150"/>
+                </DataGrid.Columns>
+                </DataGrid>
+            </Border>
+        </Grid>
+
+        <!-- Connection Error Overlay -->
+        <core:ConnectionErrorView Visibility="{Binding IsConnected, Converter={StaticResource InverseBooleanToVisibilityConverter}}"/>
+    </Grid>
+</UserControl>
+
