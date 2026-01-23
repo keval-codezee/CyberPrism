@@ -13,8 +13,14 @@ if (builder.Environment.IsDevelopment())
 }
 
 // 1. Database: Configure PostgreSQL
+builder.Logging.AddConsole();
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+if (string.IsNullOrWhiteSpace(connectionString))
+{
+    Console.Error.WriteLine("DefaultConnection is missing or empty.");
+}
 builder.Services.AddDbContext<IndustrialDbContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseNpgsql(connectionString));
 
 // 2. Register API Controllers
 builder.Services.AddControllers();
